@@ -87,16 +87,3 @@ $boxColor: #796856;
     }
   }
 }
-
-.hero h1 {
-  animation: heroh1 2s ease;
-  @keyframes heroh1 {
-    0% {
-      transform: translateY(-50%);
-      color: transparent;
-    }
-    100% {
-      transform: translateY(0%);
-    }
-  }
-}

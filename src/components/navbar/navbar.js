@@ -21,17 +21,29 @@ const nav = () => {
         </a>
       </div>
       <div className="socials flex">
-        <a href="https://github.com/AlejandroV01">
+        <a
+          href="https://github.com/AlejandroV01"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon icon={faGithub} size="2x" className="fontawesome" />
         </a>
-        <a href="https://www.linkedin.com/in/alejandro-vera-996579248/">
+        <a
+          href="https://www.linkedin.com/in/alejandro-vera-996579248/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             icon={faLinkedin}
             size="2x"
             className="fontawesome"
           />
         </a>
-        <a href="mailto:alexvera0109@gmail.com">
+        <a
+          href="mailto:alexvera0109@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             icon={faEnvelope}
             size="2x"

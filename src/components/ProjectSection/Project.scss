@@ -7,18 +7,6 @@ h1 {
   margin-bottom: 5rem;
   margin-top: 2rem;
 }
-.h1-active {
-  animation: h1Active 1s;
-  @keyframes h1Active {
-    0% {
-      color: transparent;
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-}
 
 .projects {
   margin-top: 2rem;
@@ -91,29 +79,4 @@ h1 {
 .links a {
   flex-direction: row;
   color: $paragraphColor;
-}
-
-.project-active-right {
-  animation: enterDivRight 3s ease;
-
-  @keyframes enterDivRight {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-}
-.project-active-left {
-  animation: enterDivLeft 3s ease;
-
-  @keyframes enterDivLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 }

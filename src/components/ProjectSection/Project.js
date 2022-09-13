@@ -1,46 +1,110 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 import "./Project.scss";
 const Project = () => {
-  const [active, setActive] = useState(false);
-  const [project1, setProject1] = useState(false);
-  const [project2, setProject2] = useState(false);
-  const [project3, setProject3] = useState(false);
-  const [project4, setProject4] = useState(false);
-  const animate = () => {
-    let scrollY = window.scrollY;
-    if (scrollY >= 125) {
-      setActive(true);
-    }
-    if (scrollY >= 300) {
-      setProject1(true);
-    }
-    if (scrollY >= 650) {
-      setProject2(true);
-    }
-    if (scrollY >= 1150) {
-      setProject3(true);
-    }
-    if (scrollY >= 1430) {
-      setProject4(true);
-    }
-    console.log(scrollY);
+  const rightProjectAnimation = {
+    hidden: { opacity: 0, x: 150 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
+  const leftProjectAnimation = {
+    hidden: { opacity: 0, x: -150 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
+  const headerAnimation = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
-  window.addEventListener("scroll", animate);
+  const projects = [
+    {
+      projectID: 1,
+      projectName: "Algorithm Visualizer",
+      projectText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
+      projectSkills: {
+        skill1: "VS Code",
+        skill2: "React.js",
+        skill3: "SCSS",
+        skill4: "API",
+        skill5: "TypeScript",
+        skill6: "Git",
+      },
+      gitLink: "https://github.com/AlejandroV01",
+      liveBuild: "https://alejandroverapokemonapi.netlify.app",
+      variant: "rightProjectAnimation",
+    },
+    {
+      projectID: 2,
+      projectName: "Pokemon API",
+      projectText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
+      projectSkills: {
+        skill1: "VS Code",
+        skill2: "React.js",
+        skill3: "SCSS",
+        skill4: "API",
+        skill5: "TypeScript",
+        skill6: "Git",
+      },
+      gitLink: "https://github.com/AlejandroV01",
+      liveBuild: "https://alejandroverapokemonapi.netlify.app",
+      variant: "leftProjectAnimation",
+    },
+    {
+      projectID: 3,
+      projectName: "Todo-List",
+      projectText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
+      projectSkills: {
+        skill1: "VS Code",
+        skill2: "React.js",
+        skill3: "SCSS",
+        skill4: "API",
+        skill5: "TypeScript",
+        skill6: "Git",
+      },
+      gitLink: "https://github.com/AlejandroV01",
+      liveBuild: "https://alejandroverapokemonapi.netlify.app",
+      variant: "rightProjectAnimation",
+    },
+    {
+      projectID: 4,
+      projectName: "Country API",
+      projectText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
+      projectSkills: {
+        skill1: "VS Code",
+        skill2: "React.js",
+        skill3: "SCSS",
+        skill4: "API",
+        skill5: "TypeScript",
+        skill6: "Git",
+      },
+      gitLink: "https://github.com/AlejandroV01",
+      liveBuild: "https://alejandroverapokemonapi.netlify.app",
+      variant: "leftProjectAnimation",
+    },
+  ];
 
   return (
     <div className="projects">
-      <h1 className={active ? "h1-active project-title" : "project-title"}>
+      <motion.h1
+        className="project-title"
+        initial="hidden"
+        whileInView="visible"
+        variants={headerAnimation}
+      >
         PROJECTS
-      </h1>
+      </motion.h1>
       {/* project with image on left side */}
-      <div
-        className={
-          project1 ? "project-active-right project-div" : "project-div"
-        }
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={rightProjectAnimation}
+        className="project-div"
       >
         <a href="/" className="project-image-div picture-right">
           <img
@@ -84,12 +148,15 @@ const Project = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* project with image on left side */}
       {/* *************************************** */}
       {/* project with image on right side */}
-      <div
-        className={project2 ? "project-active-left project-div" : "project-div"}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={leftProjectAnimation}
+        className="project-div"
       >
         <a href="/" className="project-image-div picture-left">
           <img
@@ -133,13 +200,14 @@ const Project = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* project with image on right side */}
       {/* project with image on left side */}
-      <div
-        className={
-          project3 ? "project-active-right project-div" : "project-div"
-        }
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={rightProjectAnimation}
+        className="project-div"
       >
         <a href="/" className="project-image-div picture-right">
           <img
@@ -183,11 +251,14 @@ const Project = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* project with image on left side */}
       {/* project with image on right side */}
-      <div
-        className={project4 ? "project-active-left project-div" : "project-div"}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={leftProjectAnimation}
+        className="project-div"
       >
         <a href="/" className="project-image-div picture-left">
           <img
@@ -231,7 +302,7 @@ const Project = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* project with image on right side */}
     </div>
   );
