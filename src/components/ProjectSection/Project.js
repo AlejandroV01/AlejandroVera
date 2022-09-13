@@ -18,83 +18,13 @@ const Project = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
-  const projects = [
-    {
-      projectID: 1,
-      projectName: "Algorithm Visualizer",
-      projectText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
-      projectSkills: {
-        skill1: "VS Code",
-        skill2: "React.js",
-        skill3: "SCSS",
-        skill4: "API",
-        skill5: "TypeScript",
-        skill6: "Git",
-      },
-      gitLink: "https://github.com/AlejandroV01",
-      liveBuild: "https://alejandroverapokemonapi.netlify.app",
-      variant: "rightProjectAnimation",
-    },
-    {
-      projectID: 2,
-      projectName: "Pokemon API",
-      projectText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
-      projectSkills: {
-        skill1: "VS Code",
-        skill2: "React.js",
-        skill3: "SCSS",
-        skill4: "API",
-        skill5: "TypeScript",
-        skill6: "Git",
-      },
-      gitLink: "https://github.com/AlejandroV01",
-      liveBuild: "https://alejandroverapokemonapi.netlify.app",
-      variant: "leftProjectAnimation",
-    },
-    {
-      projectID: 3,
-      projectName: "Todo-List",
-      projectText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
-      projectSkills: {
-        skill1: "VS Code",
-        skill2: "React.js",
-        skill3: "SCSS",
-        skill4: "API",
-        skill5: "TypeScript",
-        skill6: "Git",
-      },
-      gitLink: "https://github.com/AlejandroV01",
-      liveBuild: "https://alejandroverapokemonapi.netlify.app",
-      variant: "rightProjectAnimation",
-    },
-    {
-      projectID: 4,
-      projectName: "Country API",
-      projectText:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cum. Esse quibusdam error quisquam repellendus dicta deleniti iusto doloremque sapiente corrupti molestiae reprehenderit blanditiis nulla dolor, laboriosam mollitia ullam itaque?",
-      projectSkills: {
-        skill1: "VS Code",
-        skill2: "React.js",
-        skill3: "SCSS",
-        skill4: "API",
-        skill5: "TypeScript",
-        skill6: "Git",
-      },
-      gitLink: "https://github.com/AlejandroV01",
-      liveBuild: "https://alejandroverapokemonapi.netlify.app",
-      variant: "leftProjectAnimation",
-    },
-  ];
-
   return (
     <div className="projects">
       <motion.h1
         className="project-title"
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
         variants={headerAnimation}
       >
         PROJECTS
@@ -103,6 +33,7 @@ const Project = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
         variants={rightProjectAnimation}
         className="project-div"
       >
@@ -155,6 +86,7 @@ const Project = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
         variants={leftProjectAnimation}
         className="project-div"
       >
@@ -206,6 +138,7 @@ const Project = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
         variants={rightProjectAnimation}
         className="project-div"
       >
@@ -257,6 +190,7 @@ const Project = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
+        viewport={{ once: true }}
         variants={leftProjectAnimation}
         className="project-div"
       >

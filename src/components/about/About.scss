@@ -4,6 +4,7 @@ $headerColor: #ce5252;
   grid-template-columns: repeat(12, 1fr);
   padding-bottom: 5rem;
 }
+
 .about-left-side,
 .about-right-side {
   grid-row: 1 / 2;
@@ -45,29 +46,16 @@ $headerColor: #ce5252;
   margin-bottom: 5rem;
   margin-top: 2rem;
 }
-.h1-active {
-  animation: h1Active 1s;
-  @keyframes h1Active {
-    0% {
-      color: transparent;
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-}
+
 .about-pic {
-  width: 32rem;
+  width: 100%;
 }
-.image-animate {
-  animation: aboutImage 2s;
-  @keyframes aboutImage {
-    0% {
-      width: 5rem;
-    }
-    100% {
-      width: 32rem;
-    }
+@media only screen and(max-width: 1450px) {
+  .about-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .about-pic {
+    width: 300px;
   }
 }

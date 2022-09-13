@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import React from "react";
 import "./About.scss";
 const About = () => {
-  const [active, setActive] = useState(false);
-  const [about, setAbout] = useState(false);
-  const animate = () => {
-    let scrollY = window.scrollY;
-    if (scrollY >= 2190) {
-      setActive(true);
-    }
-    if (scrollY >= 2400) {
-      setAbout(true);
-    }
+  const headerAnimation = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+  const imageAnimation = {
+    hidden: { opacity: 0, scale: 0.7 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
   };
 
-  window.addEventListener("scroll", animate);
   return (
     <div className="container">
-      <h1 className={active ? "h1-active project-title" : "project-title"}>
+      <motion.h1
+        initial="hidden"
+        whileInView="visible"
+        variants={headerAnimation}
+        viewport={{ once: true }}
+        className="project-title"
+      >
         About
-      </h1>
+      </motion.h1>
       <div className="about-container">
         <div className="about-left-side">
           <p>
@@ -59,10 +62,14 @@ const About = () => {
           </div>
         </div>
         <div className="about-right-side">
-          <img
+          <motion.img
+            variants={imageAnimation}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
             src={require("../mesmall.png")}
             alt="myImage"
-            className={about ? "image-animate about-pic" : "about-pic"}
+            className="about-pic"
           />
         </div>
       </div>
